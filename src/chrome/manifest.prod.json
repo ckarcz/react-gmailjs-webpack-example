@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "react-gmailjs-webpack-example",
+  "version": "0.1.0",
+  "description": "React+GmailJS+Webpack Example.",
+  "homepage_url": "https://www.github.com/ckarcz/react-gmailjs-webpack-example",
+  "browser_action": {
+    "default_title": "GmailJS Test",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "page": "background.html",
+    "persistent": false
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "js/gmail_content_script.bundle.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "js/gmail_injection_script.bundle.js"
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "contextMenus",
+    "identity",
+    "https://mail.google.com/*"
+  ],
+  "content_security_policy": "default-src 'self'; script-src 'self'; style-src * 'unsafe-inline'; img-src 'self' data:;"
+}

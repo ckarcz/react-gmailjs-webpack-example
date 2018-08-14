@@ -1,0 +1,18 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "package.json"
+            ],
+            "url": "http://json.schemastore.org/package.json"
+        },
+        {
+            "fileMatch": [
+                "manifest.json",
+                "manifest.*.json"
+            ],
+            "url": "http://json.schemastore.org/chrome-manifest"
+        }
+    ],
+    "javascript.implicitProjectConfig.experimentalDecorators": true
+}
